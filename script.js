@@ -77,11 +77,13 @@ function hideTooltip() {
 
 // ── Text wrap ────────────────────────────────────────────────────
 function wrapText(selection) {
-  const MAX = 5;
   selection.each(function(d) {
     const el    = d3.select(this);
     const r     = nodeRadius(d);
     const chars = [...d.data.name];
+    // 純中文 → 5 字換行；含英文/數字（含中英混合）→ 10 字換行
+    const hasLatinOrNum = /[A-Za-z0-9]/.test(d.data.name);
+    const MAX = hasLatinOrNum ? 10 : 5;
 
     el.text(null);
 
