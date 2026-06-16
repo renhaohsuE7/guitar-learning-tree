@@ -54,12 +54,12 @@ body::before {
 
 /* leaf */
 .node.n-leaf circle { fill: #051005; stroke: #44BB44; }
-.node.n-leaf text   { fill: #6DCF70; font-size: 16px; }
+.node.n-leaf text   { fill: #9DC4AE; font-size: 16px; }
 .node.n-leaf        { cursor: default; }
 
 /* leaf with url */
 .node.n-leaf-link circle { fill: #051005; stroke: #44BB44; }
-.node.n-leaf-link text   { fill: #6DCF70; font-size: 16px; }
+.node.n-leaf-link text   { fill: #9DC4AE; font-size: 16px; }
 .node.n-leaf-link        { cursor: pointer; }
 .node.n-leaf-link:hover circle { filter: brightness(1.9) drop-shadow(0 0 6px #44BB44); }
 

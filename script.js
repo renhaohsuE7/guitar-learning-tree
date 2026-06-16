@@ -120,6 +120,16 @@ const LINK_COLORS = [
   'rgba(120,70,120,0.40)',
 ];
 
+// Alternating colors for sibling leaf nodes — muted, lighter, low saturation
+const LEAF_COLORS = ['#9DC4AE', '#9AAFC4'];
+
+function leafTextColor(d) {
+  const isLeaf = !d.children && !d._children;
+  if (!isLeaf) return null;
+  if (!d.parent || !d.parent.children) return LEAF_COLORS[0];
+  return LEAF_COLORS[d.parent.children.indexOf(d) % 2];
+}
+
 function nodeRadius(d) {
   return d.depth === 0 ? 11 : d.depth === 1 ? 8 : 6;
 }
@@ -257,7 +267,7 @@ function update(source) {
     .attr("transform", d => `translate(${d.x},${-d.y})`);
 
   nodeUpdate.select("circle").attr("r", d => nodeRadius(d));
-  nodeUpdate.select("text").call(wrapText);
+  nodeUpdate.select("text").call(wrapText).style("fill", leafTextColor);
 
   node.exit()
     .transition().duration(380)
