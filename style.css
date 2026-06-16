@@ -1,0 +1,119 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-anchor: none; }
+
+body {
+  background: #080814;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+/* fade hint at top — suggests more content above */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 90px;
+  background: linear-gradient(to bottom, #080814 20%, transparent 100%);
+  pointer-events: none;
+  z-index: 20;
+}
+
+#tree-svg { display: block; }
+
+/* ── Links ──────────────────────────────────────── */
+.link {
+  fill: none;
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+/* ── Nodes ──────────────────────────────────────── */
+.node { cursor: pointer; }
+.node circle { stroke-width: 2px; }
+.node:hover circle { filter: brightness(1.7) drop-shadow(0 0 5px currentColor); }
+.node text {
+  text-anchor: middle;
+  user-select: none;
+  font-size: 17px;
+  fill: #C8D4E8;
+}
+
+/* root */
+.node.n-root circle { fill: #ff6b35; stroke: #ffcc99; }
+.node.n-root text   { fill: #FFAA70; font-weight: 700; font-size: 23px; }
+
+/* branch: collapsed */
+.node.n-collapsed circle { fill: #2a0800; stroke: #FF6644; }
+.node.n-collapsed text   { fill: #FF9977; }
+
+/* branch: expanded */
+.node.n-expanded circle { fill: #060620; stroke: #6677EE; }
+.node.n-expanded text   { fill: #99AAFF; }
+
+/* leaf */
+.node.n-leaf circle { fill: #051005; stroke: #44BB44; }
+.node.n-leaf text   { fill: #6DCF70; font-size: 16px; }
+.node.n-leaf        { cursor: default; }
+
+/* leaf with url */
+.node.n-leaf-link circle { fill: #051005; stroke: #44BB44; }
+.node.n-leaf-link text   { fill: #6DCF70; font-size: 16px; }
+.node.n-leaf-link        { cursor: pointer; }
+.node.n-leaf-link:hover circle { filter: brightness(1.9) drop-shadow(0 0 6px #44BB44); }
+
+/* ── Tooltip ─────────────────────────────────────── */
+#tooltip {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  pointer-events: none;
+  max-width: 220px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #334;
+  background: rgba(10, 10, 24, 0.92);
+  backdrop-filter: blur(8px);
+  font-size: 12px;
+  line-height: 1.55;
+  color: #C8D4E8;
+}
+#tooltip .tip-action { font-size: 11px; font-weight: 600; margin-bottom: 4px; letter-spacing: 0.03em; }
+#tooltip .tip-items  { color: #99AACC; }
+#tooltip .tip-leaf   { color: #6DCF70; }
+
+/* ── Expand toggle button ───────────────────────────────── */
+#expand-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 30;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #334;
+  background: rgba(10, 10, 24, 0.88);
+  backdrop-filter: blur(8px);
+  color: #99AAFF;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s;
+}
+#expand-toggle:hover {
+  background: rgba(30, 30, 60, 0.95);
+  border-color: #6677EE;
+}
+
+/* ── Fixed bottom bar ───────────────────────────── */
+.hint-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  padding: 10px 24px;
+  background: linear-gradient(to top, #080814 60%, transparent);
+  color: #2a2a44;
+  font-size: 0.75rem;
+  text-align: center;
+  pointer-events: none;
+  z-index: 20;
+}
