@@ -117,3 +117,69 @@ body::before {
   pointer-events: none;
   z-index: 20;
 }
+
+/* ── Instrument nav bar ─────────────────────────── */
+.nav-bar {
+  position: fixed;
+  top: 16px; left: 16px;
+  z-index: 30;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #334;
+  background: rgba(10, 10, 24, 0.88);
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+}
+.nav-home { color: #99AAFF; text-decoration: none; padding: 2px 6px; }
+.nav-home:hover { color: #C8D4E8; }
+.nav-switch { color: #667; text-decoration: none; padding: 2px 6px; border-radius: 5px; }
+.nav-switch:hover { color: #C8D4E8; }
+.nav-switch.nav-current { color: #FFAA70; background: rgba(255,107,53,0.12); cursor: default; }
+.nav-switch.nav-current:hover { color: #FFAA70; }
+
+/* ── Landing page ───────────────────────────────── */
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 36px;
+}
+.landing-title {
+  color: #FFAA70;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.landing {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  gap: 12px;
+  border-radius: 14px;
+  border: 1px solid #334;
+  background: rgba(10, 10, 24, 0.88);
+  text-decoration: none;
+  color: #C8D4E8;
+  transition: background 0.18s, border-color 0.18s, transform 0.18s;
+}
+.card:hover {
+  background: rgba(30, 30, 60, 0.95);
+  border-color: #6677EE;
+  transform: translateY(-3px);
+}
+.card-emoji { font-size: 48px; line-height: 1; }
+.card-label { font-size: 16px; }

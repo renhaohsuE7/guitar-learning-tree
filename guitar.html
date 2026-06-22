@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>電吉他學習路徑</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body data-instrument="guitar">
+
+<svg id="tree-svg"></svg>
+
+<div id="tooltip"></div>
+<button id="expand-toggle" title="展開或收合全部節點">⊞ 展開全部</button>
+<div class="hint-bar">↑ 向上捲動探索更多層次 &nbsp;·&nbsp; 點擊節點展開 / 收起</div>
+
+<script src="instruments.js"></script>
+<script src="data-guitar.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
