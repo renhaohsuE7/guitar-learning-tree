@@ -138,6 +138,7 @@ body::before {
 .nav-switch { color: #667; text-decoration: none; padding: 2px 6px; border-radius: 5px; }
 .nav-switch:hover { color: #C8D4E8; }
 .nav-switch.nav-current { color: #FFAA70; background: rgba(255,107,53,0.12); cursor: default; }
+.nav-switch.nav-current:hover { color: #FFAA70; }
 
 /* ── Landing page ───────────────────────────────── */
 .landing-page {

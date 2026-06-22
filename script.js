@@ -32,7 +32,8 @@ const tooltipEl = document.getElementById("tooltip");
 
 function tooltipContent(d) {
   if (d.depth === 0) {
-    return `<span class="tip-action">${d.data.name}</span>`;
+    const safe = d.data.name.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return `<span class="tip-action">${safe}</span>`;
   }
   if (d._children) {
     const kids = d._children.map(c => c.data.name);
