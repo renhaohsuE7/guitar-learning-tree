@@ -32,7 +32,7 @@ const tooltipEl = document.getElementById("tooltip");
 
 function tooltipContent(d) {
   if (d.depth === 0) {
-    return `<span class="tip-action">電吉他學習路徑</span>`;
+    return `<span class="tip-action">${d.data.name}</span>`;
   }
   if (d._children) {
     const kids = d._children.map(c => c.data.name);
