@@ -4,11 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A single-page, dependency-free visualization of an electric-guitar learning
-curriculum, rendered as an interactive D3 collapsible tree. Content is in
-Traditional Chinese (`zh-TW`). There is **no build system, no package manager,
-no tests, and no linter** — the entire app is three hand-written files plus a
-CDN script tag.
+A multi-page, dependency-free visualization of instrument learning curricula:
+a landing page of instrument cards plus one interactive D3 collapsible-tree
+page per instrument (electric guitar, drums). Content is in Traditional
+Chinese (`zh-TW`). There is **no build system, no package manager, no tests,
+and no linter** — the entire app is a handful of hand-written HTML/CSS/JS
+files plus a CDN D3 script tag on the tree pages.
 
 ## Running / previewing
 
@@ -18,10 +19,11 @@ Open `index.html` directly in a browser, or serve the folder statically:
 python -m http.server 8000   # then visit http://localhost:8000
 ```
 
-A static server is only needed because the page loads D3 from a CDN
-(`https://d3js.org/d3.v7.min.js`) and uses `new URL(...)` on `file://` is fine,
-but a server avoids any browser file-access quirks. Deployment is **GitHub
-Pages**, which is why the entry point is named `index.html`.
+A static server is only needed because the tree pages (`guitar.html`,
+`drum.html`) load D3 from a CDN (`https://d3js.org/d3.v7.min.js`); the landing
+`index.html` loads no D3. Opening files on `file://` mostly works, but a
+server avoids browser file-access quirks. Deployment is **GitHub Pages**,
+which is why the entry point is named `index.html`.
 
 ## File roles
 
