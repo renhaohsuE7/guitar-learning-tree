@@ -332,3 +332,30 @@ document.getElementById('expand-toggle').addEventListener('click', () => {
   }
   update(root);
 });
+
+// ── Instrument nav bar ───────────────────────────────────────────
+(function renderNavBar() {
+  const current = document.body.dataset.instrument;
+  if (typeof INSTRUMENTS === "undefined" || !current) return;
+
+  const nav = document.createElement("div");
+  nav.className = "nav-bar";
+
+  const home = document.createElement("a");
+  home.className = "nav-home";
+  home.href = "index.html";
+  home.textContent = "← 首頁";
+  nav.appendChild(home);
+
+  INSTRUMENTS.forEach(inst => {
+    const isCurrent = inst.id === current;
+    const el = document.createElement(isCurrent ? "span" : "a");
+    el.className = "nav-switch" + (isCurrent ? " nav-current" : "");
+    if (!isCurrent) el.href = inst.page;
+    el.textContent = inst.emoji + " " + inst.label;
+    el.title = inst.label;
+    nav.appendChild(el);
+  });
+
+  document.body.appendChild(nav);
+})();
