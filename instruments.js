@@ -4,5 +4,5 @@
 const INSTRUMENTS = [
   { id: 'guitar', label: '電吉他', emoji: '🎸', page: 'guitar.html' },
   { id: 'drum',   label: '鼓',     emoji: '🥁', page: 'drum.html'   },
-  // 日後擴充:{ id: 'bass', label: '貝斯', emoji: '🎵', page: 'bass.html' },
+  { id: 'bass',   label: '貝斯',   emoji: '🎵', page: 'bass.html'   },
 ];

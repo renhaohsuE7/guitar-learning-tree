@@ -32,11 +32,12 @@ which is why the entry point is named `index.html`.
 - `instruments.js` — `const INSTRUMENTS` registry (`{id,label,emoji,page}`).
   Single source of truth for both the landing cards and each tree page's nav
   bar. Add an instrument here + a `data-<id>.js` + an `<id>.html` to extend.
-- `guitar.html` / `drum.html` — per-instrument tree pages. Each sets
-  `<body data-instrument="<id>">` and loads, in order, D3 (CDN) →
+- `guitar.html` / `drum.html` / `bass.html` — per-instrument tree pages. Each
+  sets `<body data-instrument="<id>">` and loads, in order, D3 (CDN) →
   `instruments.js` → `data-<id>.js` → `script.js`.
-- `data-guitar.js` / `data-drum.js` — curriculum data as one global `const data`
-  (`{ name, children?, url? }`). Edit these to change curriculum content.
+- `data-guitar.js` / `data-drum.js` / `data-bass.js` — curriculum data as one
+  global `const data` (`{ name, children?, url? }`). Edit these to change
+  curriculum content.
 - `landing.js` — builds the landing cards from `INSTRUMENTS`.
 - `script.js` — shared tree renderer + interaction (D3 v7). Reads the root
   title from `data.name` and renders the nav bar from `INSTRUMENTS` +
