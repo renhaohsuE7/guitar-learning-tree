@@ -1,8 +1,7 @@
 # 貝斯(Bass)技能樹 — 參考來源蒐集
 
-> **狀態**:貝斯頁面本次**延後**(見 `docs/superpowers/specs/2026-06-22-multi-instrument-routing-and-drum-tree-design.md`)。
-> 本文先把使用者指定的貝斯 YouTube 來源蒐集存檔,供日後建立 `data-bass.js` 技能樹使用。
-> 主來源為 **goomobs**(中文貝斯教學頻道,風格輕鬆、強調新手友善)。
+> **狀態**:✅ **已完成**(2026-06-22)。貝斯技能樹已依本文來源建成 `data-bass.js`(49 部 goomobs 影片)+ `bass.html`,並加入 `instruments.js` 註冊表。
+> 本文保留為貝斯 YouTube 來源的存檔與分類依據。主來源為 **goomobs**(中文貝斯教學頻道,風格輕鬆、強調新手友善)。
 
 - **日期存取**:2026-06-22
 - **抽取方式**:`uvx yt-dlp --flat-playlist --print-to-file "%(playlist_index)s | %(id)s | %(title)s" <file> <url>`(UTF-8,避免 Windows 主控台 Big5 亂碼)
